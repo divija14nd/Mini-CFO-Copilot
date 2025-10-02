@@ -105,7 +105,7 @@ Verify that agent's core logic is working running the following on tests.
 ```bash
 PYTHONPATH=. pytest
 ```
-All tests should pass
+All tests should pass.
 
 ## 📄Extra Feature: Export to PDF
 
@@ -134,3 +134,27 @@ Export Conversation: Use the "Download Conversation" button in the sidebar to sa
 “What was the worst month for Gross Margin?”
 
 “Show me revenue trend vs budget for the last 6 months.”
+
+
+---
+
+## License
+This project is licensed under the MIT License.  
+You are free to use, modify, and distribute it with proper attribution.
+
+---
+
+## Contributing
+Contributions, issues, and feature requests are welcome!  
+Feel free to open a pull request or create an issue to suggest improvements.
+
+---
+
+## Future Work
+- Use Large Language Models anf GenAI for prompt refining.
+- Support for additional file formats (Excel, Google Sheets)  
+- More advanced financial KPIs (EBITDA margin, ROI, NPV)  
+- Interactive dashboards beyond Streamlit  
+- Integration with real-time financial APIs  
+
+
