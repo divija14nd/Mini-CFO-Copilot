@@ -3,8 +3,69 @@
 CFO Copilot is an **AI-powered assistant** that helps financial executives understand business performance by answering questions directly from structured CSV data. It can interpret natural language queries, run the necessary data analysis, and return concise, board-ready answers with charts.
 
 ---
+## Table of Contents
 
-## ✨ Features
+- [Project Overview](#project-overview)  
+- [Data & Metrics](#data--metrics)  
+- [Built Features](#built-features)  
+- [Rule Engine Features](#rule-engine-features)  
+- [Tech Stack](#tech-stack)  
+- [Project Structure](#project-structure)  
+- [Setup and Installation](#setup-and-installation)  
+- [Extra Feature: Export to PDF](#extra-feature-export-to-pdf)  
+- [Example Questions to Ask](#example-questions-to-ask)  
+- [License](#license)  
+- [Contributing](#contributing)  
+- [Future Work](#future-work)  
+
+---
+
+## Project Overview
+
+CFOs rely on monthly financial summaries to understand how the business is performing, spot risks, and explain results to the board. Traditionally, preparing these reports takes hours of manual work: pulling numbers from finance systems, reconciling actuals with budget, calculating margins, and creating charts for presentations.
+
+As part of this project, I built **Mini CFO Copilot**, a **rule-based agent** that automates this workflow.  
+The assistant is not a full finance platform — instead, it demonstrates how an end-to-end workflow can be designed where:
+
+1. A **question is interpreted** in natural language  
+2. The agent **runs the right data functions** on structured CSVs  
+3. The system **returns concise, board-ready answers with charts**  
+
+This project was intentionally scoped to be small but complete, combining **data analysis, agent design, and user experience** into a working product.
+
+---
+
+## Data & Metrics
+
+The CFO Copilot is powered by **four structured CSV files** that simulate monthly financial inputs:
+
+- **actuals.csv** → monthly actuals by entity/account  
+- **budget.csv** → monthly budget by entity/account  
+- **fx.csv** → currency exchange rates  
+- **cash.csv** → monthly cash balances  
+
+📎 [CSV Dataset Link](https://docs.google.com/spreadsheets/d/e/2PACX-1vRPAvun4Gcow4ZNgHAAdE5b36kJgnqeVNNCQLfbzc_T6-IGLxJJsxmms9TJPDn61Q/pub?output=xlsx)
+
+### Metrics Implemented
+- **Revenue (USD):** actual vs budget  
+- **Gross Margin %:** (Revenue – COGS) ÷ Revenue  
+- **Opex total (USD):** grouped by `Opex:*` categories  
+- **EBITDA (proxy):** Revenue – COGS – Opex  
+- **Cash runway:** cash ÷ avg monthly net burn (last 3 months)  
+
+---
+
+## Built Features
+
+- **Chat Interface:** CFO can type questions in natural language  
+- **Rule-Based Agent:** classifies intent → runs data functions → returns text + chart  
+- **Charts:** generated via Matplotlib & Seaborn, displayed inline in Streamlit  
+- **Export to PDF:** option to export answers or the entire conversation into a clean report  
+
+---
+
+
+## Rule Engine Features
 The agent can understand a wide variety of financial questions, including:
 
 - **Revenue vs. Budget**  
@@ -30,7 +91,7 @@ The agent can understand a wide variety of financial questions, including:
 
 ---
 
-## 🚀 Tech Stack
+## Tech Stack
 - **Web Framework:** Streamlit  
 - **Data Analysis:** pandas  
 - **Charting:** Matplotlib & Seaborn  
@@ -39,7 +100,7 @@ The agent can understand a wide variety of financial questions, including:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 ```
 cfo-copilot/
 │
@@ -66,7 +127,7 @@ cfo-copilot/
 
 ---
 
-## ⚙️ Setup and Installation
+## Setup and Installation
 
 Follow these steps to get the application running on your local machine.
 
@@ -107,7 +168,7 @@ PYTHONPATH=. pytest
 ```
 All tests should pass.
 
-## 📄Extra Feature: Export to PDF
+## Extra Feature: Export to PDF
 
 Export Single Answer: Each response with a chart includes an "Export Answer button
 
