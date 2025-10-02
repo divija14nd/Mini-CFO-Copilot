@@ -72,7 +72,7 @@ Follow these steps to get the application running on your local machine.
 
 ### 1. Clone the Repository
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/divija14nd/Mini-CFO-Copilot.git
 cd cfo-copilot
 ```
 ### 2. Create and Activate Virtual Environment
